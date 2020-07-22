@@ -9,6 +9,7 @@ const App = () => (
   <Admin dataProvider={dataProvider}>
     <Resource name="posts" list={ListGuesser} />
     <Resource name="users" {...users} />
+    <Resource name="comments" />
   </Admin>
 );
 
