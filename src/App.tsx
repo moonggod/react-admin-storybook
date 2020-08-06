@@ -1,14 +1,19 @@
 // in src/App.js
 import * as React from "react";
-import { Admin, Resource, ListGuesser } from 'react-admin';
+import { Admin, Resource } from 'react-admin';
 import users from './views/users';
-import jsonServerProvider from 'ra-data-json-server';
+import post from './views/post';
+import Dashboard from './views/dashboard';
+// import jsonServerProvider from 'ra-data-json-server';
+import authProvider from './dataProvider/authProvider';
+import dataProvider from './dataProvider/dataProvider';
 
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+// const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+
 const App = () => (
-  <Admin dataProvider={dataProvider}>
-    <Resource name="posts" list={ListGuesser} />
+  <Admin dashboard={Dashboard} authProvider={authProvider} dataProvider={dataProvider}>
     <Resource name="users" {...users} />
+    <Resource name="posts" {...post} />
     <Resource name="comments" />
   </Admin>
 );

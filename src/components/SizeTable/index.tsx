@@ -64,7 +64,7 @@ const SizeTable = ({ record, myId,source, onDataChange }:any) => {
     if (formData && record && source) {
       // onDataChange(formData)
       record[source] = formData
-      console.log(record[source])
+      // console.log(record[source])
     }
   },[formData, record, source])
 
